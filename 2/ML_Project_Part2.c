@@ -158,7 +158,7 @@ void ML_Project_Part2(){ // <--- RENAMED HERE
     fitFunc1->SetParameter(0, approx_norm1 > 0 ? approx_norm1 : N_data);
     fitFunc1->SetLineColor(kRed);
     fitFunc1->SetLineWidth(2);
-    TFitResultPtr r1 = h1->Fit(fitFunc1, "L Q S"); // L for likelihood method, Q for quiet, S for save
+    TFitResultPtr r1 = h1->Fit(fitFunc1, "Q S"); // L for likelihood method, Q for quiet, S for save
     double lambda_binned1 = -1, err_lambda_binned1 = -1;
     if (r1->IsValid()) {
         lambda_binned1 = r1->Parameter(1); err_lambda_binned1 = r1->ParError(1);
@@ -209,7 +209,7 @@ void ML_Project_Part2(){ // <--- RENAMED HERE
     fitFunc2->SetParameter(0, approx_norm2 > 0 ? approx_norm2 : N_data);
     fitFunc2->SetLineColor(kOrange+7);
     fitFunc2->SetLineWidth(2);
-    TFitResultPtr r2 = h2->Fit(fitFunc2, "L Q S"); // L for likelihood method, Q for quiet, S for save
+    TFitResultPtr r2 = h2->Fit(fitFunc2, "Q S"); // L for likelihood method, Q for quiet, S for save
     double lambda_binned2 = -1, err_lambda_binned2 = -1;
     if (r2->IsValid()) {
         lambda_binned2 = r2->Parameter(1); err_lambda_binned2 = r2->ParError(1);
@@ -252,7 +252,7 @@ void ML_Project_Part2(){ // <--- RENAMED HERE
     fitFunc3->SetParameter(0, N_data * lambda_ml_unbinned > 0 ? N_data * lambda_ml_unbinned : N_data);
     fitFunc3->SetLineColor(kCyan+2);
     fitFunc3->SetLineWidth(2);
-    TFitResultPtr r3 = h3->Fit(fitFunc3, "L Q S"); // L for likelihood method, Q for quiet, S for save
+    TFitResultPtr r3 = h3->Fit(fitFunc3, "Q S"); // L for likelihood method, Q for quiet, S for save
     double lambda_binned3 = -1, err_lambda_binned3 = -1;
     if (r3->IsValid()) {
         lambda_binned3 = r3->Parameter(1); err_lambda_binned3 = r3->ParError(1);
